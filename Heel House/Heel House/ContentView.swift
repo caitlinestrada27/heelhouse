@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var isPresenting = false
+    @State private var presentMatchView = false
+    @State private var presentProfileView = false
+    @State private var presentContentView = false
+
     var body: some View {
         ZStack{
             Text("No more roommates!")
@@ -35,7 +38,7 @@ struct ContentView: View {
                 // Bottom Stack
                 HStack(spacing: 50){
                     Button(action: {
-                        isPresenting = true
+                        presentMatchView = true
                     }) {
                         Image(systemName: "heart.fill")
                             .resizable()
@@ -43,7 +46,7 @@ struct ContentView: View {
                             .padding()
                     }
                     Button(action: {
-                        isPresenting = true
+                        presentContentView = true
                     }) {
                         Image(systemName: "house.fill")
                             .resizable()
@@ -51,7 +54,7 @@ struct ContentView: View {
                             .padding()
                     }
                     Button(action: {
-                        isPresenting = true
+                        presentProfileView = true
                     }) {
                         Image(systemName: "person.crop.circle")
                             .resizable()
@@ -62,8 +65,14 @@ struct ContentView: View {
             }
             .edgesIgnoringSafeArea(.bottom)
         }
-        .fullScreenCover(isPresented: $isPresenting) {
+        .fullScreenCover(isPresented: $presentMatchView) {
             MatchView()
+        }
+        .fullScreenCover(isPresented: $presentProfileView) {
+            ProfileView()
+        }
+        .fullScreenCover(isPresented: $presentContentView) {
+            ContentView()
         }
     }
 }
@@ -116,7 +125,7 @@ struct CardView: View {
                                     card.x = 0; card.degree = 0; card.y = 0
                                 case let x where x > 100:
                                     card.x = 500; card.degree = 12 // Moved off to the right
-                                    // matches.append(card)
+                                    //matches.append(card)
                                 case (-100)...(-1):
                                     card.x = -500; card.degree = -12 // Moved off to the left
                                 case let x where x < -100:
