@@ -17,7 +17,7 @@ struct ContentView: View {
                 }
                 Spacer()
                 Button(action: {}) {
-                    Image("heelhouse-icon") // replace with Heel House icon
+                    Image("HeelHouseLogo")
                         .resizable().aspectRatio(contentMode: .fit).frame(height: 45)
                     
                 }
@@ -86,7 +86,7 @@ struct CardView: View {
                 .frame(width: 150)
                 .opacity(Double(card.x/10 - 1))
             Spacer()
-            Image("nope") // Replace with nope icon
+            Image("pass") // Replace with nope icon
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 150)
