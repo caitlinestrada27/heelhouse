@@ -83,20 +83,22 @@ struct CardView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: .topLeading) {
-                Image(card.imageName)
+                Image(card.imageName) // User 2 photo
                     .resizable()
+                    .scaledToFit()
+                    .scaledToFill()
                 LinearGradient(gradient: cardGradient, startPoint: .top, endPoint: .bottom)
                 VStack {
                     Spacer()
                     VStack(alignment: .leading){
                         HStack {
-                            Text(card.name).font(.largeTitle).fontWeight(.bold)
-                            Text(String(card.age)).font(.title)
+                            Text(card.name).font(.largeTitle).fontWeight(.bold) // User's name
+                            Text(String(card.age)).font(.title) // User 2's age
                         }
-                        Text(card.housing)
-                        Text(card.major)
-                        Text("\(card.compatibility)%")
-                        Text(card.bio)
+                        Text(card.housing) // User 2's housing preferences
+                        Text(card.major) // User 2's major
+                        Text("\(card.compatibility)%") // Current user's compatibility with user2
+                        Text(card.bio) // User 2's bio
                     }
                 }
                 .padding()
