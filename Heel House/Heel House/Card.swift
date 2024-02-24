@@ -22,10 +22,10 @@ struct Card: Identifiable {
     
     static var data: [Card] {
         [
-            Card(name: "Caitlin", imageName: "caitlin", age: 18, housing: "Granville, Shortbread", major: "CS and Business", compatibility: 94, bio: "Freshman from New Orleans, LA majoring in CS and Business."),
-            Card(name: "Sanjana", imageName: "sanjana", age: 18, housing: "Granville, Union", major: "CS and AD/PR", compatibility: 65, bio: "Freshman from Cary, NC majoring in CS and AD/PR."),
-            Card(name: "Sadie", imageName: "sadie", age: 18, housing: "Granville, Shortbread", major: "CS and Economics", compatibility: 78, bio: "Freshman from Detroit, MI majoring in CS and Economics."),
-            Card(name: "Caroline", imageName: "caroline", age: 19, housing: "Eringhaus, Phi Mu House", major: "CS", compatibility: 88, bio: "Freshman from Chicago, IL majoring in CS.")
+            Card(name: "Caitlin", imageName: "caitlin", age: 18, housing: "Granville, Shortbread", major: "CS and Business", compatibility: 94, bio: "Freshman from New Orleans, LA."),
+            Card(name: "Sanjana", imageName: "sanjana", age: 18, housing: "Granville, Union", major: "CS and AD/PR", compatibility: 65, bio: "Freshman from Cary, NC."),
+            Card(name: "Sadie", imageName: "sadie", age: 18, housing: "Granville, Shortbread", major: "CS and Economics", compatibility: 78, bio: "Freshman from Detroit, MI."),
+            Card(name: "Caroline", imageName: "caroline", age: 19, housing: "Eringhaus, Phi Mu House", major: "CS", compatibility: 88, bio: "Freshman from Chicago, IL.")
         ]
     }
 }

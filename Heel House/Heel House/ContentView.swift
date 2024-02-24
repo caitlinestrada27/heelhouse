@@ -18,21 +18,16 @@ struct ContentView: View {
                 // Top Stack
                 HStack {
                     Button(action: {}) {
-                        Image(systemName: "person.crop.circle")
-                            .resizable()
-                            .frame(width: 30, height: 30)
-                    }
-                    Spacer()
-                    Button(action: {}) {
                         Image("HeelHouseLogo")
                             .resizable().aspectRatio(contentMode: .fit).frame(height: 45)
                         
                     }
-                    Spacer()
+                    Text("Heel House")
+                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                     Button(action: {}) {
-                        Image(systemName: "message.badge")
-                            .resizable()
-                            .frame(width: 30, height: 30)
+                        Image("HeelHouseLogo")
+                            .resizable().aspectRatio(contentMode: .fit).frame(height: 45)
+                        
                     }
                 }.padding(.horizontal)
                 // Card
@@ -42,31 +37,21 @@ struct ContentView: View {
                     }
                 }.zIndex(1.0)
                 // Bottom Stack
-                HStack(spacing: 50){
-                    Button(action: {}) {
-                        Image(systemName: "arrow.clockwise")
-                            .resizable()
-                            .frame(width: 20, height: 20)
-                    }
-                    Button(action: {}) {
-                        Image(systemName: "xmark")
-                            .resizable()
-                            .frame(width: 20, height: 20)
-                    }
-                    Button(action: {}) {
-                        Image(systemName: "star.fill")
-                            .resizable()
-                            .frame(width: 20, height: 20)
-                    }
+                HStack(spacing: 100){
                     Button(action: {}) {
                         Image(systemName: "heart.fill")
                             .resizable()
-                            .frame(width: 20, height: 20)
+                            .frame(width: 30, height: 30)
                     }
                     Button(action: {}) {
-                        Image(systemName: "bolt.fill")
+                        Image(systemName: "house.fill")
                             .resizable()
-                            .frame(width: 20, height: 20)
+                            .frame(width: 30, height: 30)
+                    }
+                    Button(action: {}) {
+                        Image(systemName: "person.crop.circle")
+                            .resizable()
+                            .frame(width: 30, height: 30)
                     }
                 }
             }
