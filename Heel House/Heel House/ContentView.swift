@@ -86,6 +86,9 @@ struct CardView: View {
                             Text(card.name).font(.largeTitle).fontWeight(.bold)
                             Text(String(card.age)).font(.title)
                         }
+                        Text(card.housing)
+                        Text(card.major)
+                        Text("\(card.compatibility)%")
                         Text(card.bio)
                     }
                 }
@@ -125,4 +128,8 @@ struct CardView: View {
             .opacity(card.x == 0 ? 1 : 0) // Hide the card if it's not at the center
         }
     }
+}
+
+#Preview {
+    ContentView()
 }
