@@ -20,14 +20,12 @@ struct ContentView: View {
                     Button(action: {}) {
                         Image("HeelHouseLogo")
                             .resizable().aspectRatio(contentMode: .fit).frame(height: 45)
-                        
                     }
                     Text("Heel House")
                         .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                     Button(action: {}) {
                         Image("HeelHouseLogo")
                             .resizable().aspectRatio(contentMode: .fit).frame(height: 45)
-                        
                     }
                 }.padding(.horizontal)
                 // Card
@@ -35,23 +33,34 @@ struct ContentView: View {
                     ForEach(Card.data.reversed()) { card in
                         CardView(card: card).padding(8)
                     }
-                }.zIndex(1.0)
+                }
+                .zIndex(1.0)
+                Spacer()
                 // Bottom Stack
-                HStack(spacing: 100){
-                    Button(action: {}) {
-                        Image(systemName: "heart.fill")
-                            .resizable()
-                            .frame(width: 30, height: 30)
+                HStack {
+                    // Matches (MatchView)
+                    NavigationView {
+                        NavigationLink(destination: {
+                            MatchView()
+                        } , label: {
+                            Image(systemName: "heart.fill")
+                        })
                     }
-                    Button(action: {}) {
-                        Image(systemName: "house.fill")
-                            .resizable()
-                            .frame(width: 30, height: 30)
+                    // Home Page (ContentView)
+                    NavigationView {
+                        NavigationLink(destination: {
+                            ContentView()
+                        } , label: {
+                            Image(systemName: "house.fill")
+                        })
                     }
-                    Button(action: {}) {
-                        Image(systemName: "person.crop.circle")
-                            .resizable()
-                            .frame(width: 30, height: 30)
+                    // Profile (ProfileView)
+                    NavigationView {
+                        NavigationLink(destination: {
+                            ProfileView()
+                        } , label: {
+                            Image(systemName: "person.crop.circle")
+                        })
                     }
                 }
             }
