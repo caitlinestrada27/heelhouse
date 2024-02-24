@@ -9,35 +9,40 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            // Top Stack
-            HStack {
-                Button(action: {}) {
-                    Image(systemName: "person.crop.circle")
-                        .resizable()
-                        .frame(width: 30, height: 30)
-                }
-                Spacer()
-                Button(action: {}) {
-                    Image("HeelHouseLogo")
-                        .resizable().aspectRatio(contentMode: .fit).frame(height: 45)
-                    
-                }
-                Spacer()
-                Button(action: {}) {
-                    Image(systemName: "message.badge")
-                        .resizable()
-                        .frame(width: 30, height: 30)
-                }
-            }.padding(.horizontal)
-            // Card
-            ZStack {
-                ForEach(Card.data.reversed()) { card in
-                    CardView(card: card).padding(8)
-                }
-            }.zIndex(1.0)
-            // Bottom Stack
-            HStack(spacing: 50){
+        ZStack{
+            Text("No more roommates!")
+                .font(.title)
+                .foregroundColor(.blue)
+                .zIndex(0) // puts behind other in view
+            VStack {
+                // Top Stack
+                HStack {
+                    Button(action: {}) {
+                        Image(systemName: "person.crop.circle")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                    }
+                    Spacer()
+                    Button(action: {}) {
+                        Image("HeelHouseLogo")
+                            .resizable().aspectRatio(contentMode: .fit).frame(height: 45)
+                        
+                    }
+                    Spacer()
+                    Button(action: {}) {
+                        Image(systemName: "message.badge")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                    }
+                }.padding(.horizontal)
+                // Card
+                ZStack {
+                    ForEach(Card.data.reversed()) { card in
+                        CardView(card: card).padding(8)
+                    }
+                }.zIndex(1.0)
+                // Bottom Stack
+                HStack(spacing: 50){
                     Button(action: {}) {
                         Image(systemName: "arrow.clockwise")
                             .resizable()
@@ -63,7 +68,9 @@ struct ContentView: View {
                             .resizable()
                             .frame(width: 20, height: 20)
                     }
+                }
             }
+
         }
     }
 }
