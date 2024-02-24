@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var isPresenting = false
     var body: some View {
         ZStack{
             Text("No more roommates!")
@@ -18,14 +19,21 @@ struct ContentView: View {
                 // Top Stack
                 HStack {
                     Button(action: {}) {
-                        Image("HeelHouseLogo")
-                            .resizable().aspectRatio(contentMode: .fit).frame(height: 45)
+                        Image(systemName: "person.crop.circle")
+                            .resizable()
+                            .frame(width: 30, height: 30)
                     }
-                    Text("Heel House")
-                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    Spacer()
                     Button(action: {}) {
                         Image("HeelHouseLogo")
                             .resizable().aspectRatio(contentMode: .fit).frame(height: 45)
+                        
+                    }
+                    Spacer()
+                    Button(action: {}) {
+                        Image(systemName: "message.badge")
+                            .resizable()
+                            .frame(width: 30, height: 30)
                     }
                 }.padding(.horizontal)
                 // Card
@@ -33,43 +41,45 @@ struct ContentView: View {
                     ForEach(Card.data.reversed()) { card in
                         CardView(card: card).padding(8)
                     }
-                }
-                .zIndex(1.0)
-                Spacer()
+                }.zIndex(1.0)
                 // Bottom Stack
-                HStack {
-                    // Matches (MatchView)
-                    NavigationView {
-                        NavigationLink(destination: {
-                            MatchView()
-                        } , label: {
-                            Image(systemName: "heart.fill")
-                        })
+                HStack(spacing: 50){
+                    Button(action: {
+                        isPresenting = true
+                    }) {
+                        Image(systemName: "heart.fill")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                            .padding()
                     }
-                    // Home Page (ContentView)
-                    NavigationView {
-                        NavigationLink(destination: {
-                            ContentView()
-                        } , label: {
-                            Image(systemName: "house.fill")
-                        })
+                    Button(action: {
+                        isPresenting = true
+                    }) {
+                        Image(systemName: "house.fill")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                            .padding()
                     }
-                    // Profile (ProfileView)
-                    NavigationView {
-                        NavigationLink(destination: {
-                            ProfileView()
-                        } , label: {
-                            Image(systemName: "person.crop.circle")
-                        })
+                    Button(action: {
+                        isPresenting = true
+                    }) {
+                        Image(systemName: "person.crop.circle")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                            .padding()
                     }
                 }
             }
-
+            .edgesIgnoringSafeArea(.bottom)
+        }
+        .fullScreenCover(isPresented: $isPresenting) {
+            MatchView()
         }
     }
 }
 
 struct CardView: View {
+    
     @State var card: Card
     let cardGradient = Gradient(colors: [Color.black.opacity(0), Color.black.opacity(0.5)])
     let screenWidth = UIScreen.main.bounds.width
@@ -77,22 +87,20 @@ struct CardView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: .topLeading) {
-                Image(card.imageName) // User 2 photo
+                Image(card.imageName)
                     .resizable()
-                    .scaledToFit()
-                    .scaledToFill()
                 LinearGradient(gradient: cardGradient, startPoint: .top, endPoint: .bottom)
                 VStack {
                     Spacer()
                     VStack(alignment: .leading){
                         HStack {
-                            Text(card.name).font(.largeTitle).fontWeight(.bold) // User's name
-                            Text(String(card.age)).font(.title) // User 2's age
+                            Text(card.name).font(.largeTitle).fontWeight(.bold)
+                            Text(String(card.age)).font(.title)
                         }
-                        Text(card.housing) // User 2's housing preferences
-                        Text(card.major) // User 2's major
-                        Text("\(card.compatibility)%") // Current user's compatibility with user2
-                        Text(card.bio) // User 2's bio
+                        Text(card.housing)
+                        Text(card.major)
+                        Text("\(card.compatibility)%")
+                        Text(card.bio)
                     }
                 }
                 .padding()
