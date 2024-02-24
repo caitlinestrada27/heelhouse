@@ -14,6 +14,8 @@ struct ContentView: View {
             HStack {
                 Button(action: {}) {
                     Image(systemName: "person.crop.circle")
+                        .resizable()
+                        .frame(width: 30, height: 30)
                 }
                 Spacer()
                 Button(action: {}) {
@@ -24,6 +26,8 @@ struct ContentView: View {
                 Spacer()
                 Button(action: {}) {
                     Image(systemName: "message.badge")
+                        .resizable()
+                        .frame(width: 30, height: 30)
                 }
             }.padding(.horizontal)
             // Card
@@ -33,21 +37,31 @@ struct ContentView: View {
                 }
             }.zIndex(1.0)
             // Bottom Stack
-            HStack(spacing: 0){
+            HStack(spacing: 50){
                     Button(action: {}) {
                         Image(systemName: "arrow.clockwise")
+                            .resizable()
+                            .frame(width: 20, height: 20)
                     }
                     Button(action: {}) {
                         Image(systemName: "xmark")
+                            .resizable()
+                            .frame(width: 20, height: 20)
                     }
                     Button(action: {}) {
                         Image(systemName: "star.fill")
+                            .resizable()
+                            .frame(width: 20, height: 20)
                     }
                     Button(action: {}) {
                         Image(systemName: "heart.fill")
+                            .resizable()
+                            .frame(width: 20, height: 20)
                     }
                     Button(action: {}) {
                         Image(systemName: "bolt.fill")
+                            .resizable()
+                            .frame(width: 20, height: 20)
                     }
             }
         }
@@ -63,7 +77,8 @@ struct CardView: View {
     let cardGradient = Gradient(colors: [Color.black.opacity(0), Color.black.opacity(0.5)])
     var body: some View {
         ZStack(alignment: .topLeading) {
-            Image(card.imageName).resizable()
+            Image(card.imageName)
+                .resizable()
             LinearGradient(gradient: cardGradient, startPoint: .top, endPoint: .bottom)
             VStack {
                 Spacer()
@@ -80,13 +95,13 @@ struct CardView: View {
         }
         // match or nope
         HStack {
-            Image("match") // Replace with match icon
+            Image("match")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 150)
                 .opacity(Double(card.x/10 - 1))
             Spacer()
-            Image("pass") // Replace with nope icon
+            Image("pass")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 150)
@@ -97,7 +112,7 @@ struct CardView: View {
         .offset(x: card.x, y: card.y)
         .rotationEffect(.init(degrees: card.degree))
         // Step 2 - gesture recognizer updaets the coordinate values of the card model
-        .gesture ( // Google how to implement .gesture
+        .gesture ( // Needs debugging
             
             DragGesture()
             
