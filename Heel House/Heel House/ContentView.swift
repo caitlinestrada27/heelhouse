@@ -116,6 +116,7 @@ struct CardView: View {
                                     card.x = 0; card.degree = 0; card.y = 0
                                 case let x where x > 100:
                                     card.x = 500; card.degree = 12 // Moved off to the right
+                                    // matches.append(card)
                                 case (-100)...(-1):
                                     card.x = -500; card.degree = -12 // Moved off to the left
                                 case let x where x < -100:

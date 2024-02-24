@@ -5,6 +5,7 @@
 //  Created by Caitlin Estrada on 2/24/24.
 //
 
+import SwiftUI
 import UIKit
 
 struct Card: Identifiable {
@@ -14,7 +15,7 @@ struct Card: Identifiable {
     let age: Int
     let housing: String
     let major: String
-    let compatibility: Int
+    @State var compatibility: Int
     let bio: String
     var x: CGFloat = 0.0
     var y: CGFloat = 0.0
