@@ -18,11 +18,6 @@ struct ContentView: View {
             VStack {
                 // Top Stack
                 HStack {
-                    Button(action: {}) {
-                        Image(systemName: "person.crop.circle")
-                            .resizable()
-                            .frame(width: 30, height: 30)
-                    }
                     Spacer()
                     Button(action: {}) {
                         Image("HeelHouseLogo")
@@ -30,11 +25,6 @@ struct ContentView: View {
                         
                     }
                     Spacer()
-                    Button(action: {}) {
-                        Image(systemName: "message.badge")
-                            .resizable()
-                            .frame(width: 30, height: 30)
-                    }
                 }.padding(.horizontal)
                 // Card
                 ZStack {
@@ -49,7 +39,7 @@ struct ContentView: View {
                     }) {
                         Image(systemName: "heart.fill")
                             .resizable()
-                            .frame(width: 20, height: 20)
+                            .frame(width: 30, height: 30)
                             .padding()
                     }
                     Button(action: {
@@ -57,7 +47,7 @@ struct ContentView: View {
                     }) {
                         Image(systemName: "house.fill")
                             .resizable()
-                            .frame(width: 20, height: 20)
+                            .frame(width: 30, height: 30)
                             .padding()
                     }
                     Button(action: {
@@ -65,7 +55,7 @@ struct ContentView: View {
                     }) {
                         Image(systemName: "person.crop.circle")
                             .resizable()
-                            .frame(width: 20, height: 20)
+                            .frame(width: 30, height: 30)
                             .padding()
                     }
                 }
