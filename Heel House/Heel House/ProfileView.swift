@@ -14,13 +14,13 @@ struct ProfileView: View {
     @State private var presentContentView = false
     
     // User attributes
-    @State private var firstName: String = ""
-    @State private var lastName: String = ""
-    @State private var age: String = ""
-    @State private var housing: String = ""
-    @State private var major: String = ""
-    @State private var sleepSchedule: Int = 0
-    @State private var bio: String = ""
+    @State var firstName: String = ""
+    @State var lastName: String = ""
+    @State var age: String = ""
+    @State var housing: String = ""
+    @State var major: String = ""
+    @State var sleepSchedule: Int = 0
+    @State var bio: String = ""
     
     var body: some View {
         //user can view matches they swiped right on here
@@ -42,26 +42,32 @@ struct ProfileView: View {
             
             // User Info
             VStack(alignment: .leading) {
+                Text("First Name: \(firstName)")
                 TextField("First Name", text: $firstName)
                     .disableAutocorrection(true)
                     .padding()
                     .textFieldStyle(RoundedBorderTextFieldStyle())
+                Text("Last Name: \(lastName)")
                 TextField("Last Name", text: $lastName)
                     .disableAutocorrection(true)
                     .padding()
                     .textFieldStyle(RoundedBorderTextFieldStyle())
+                Text("Age: \(age)")
                 TextField("Age",text: $age)
                     .disableAutocorrection(true)
                     .padding()
                     .textFieldStyle(RoundedBorderTextFieldStyle())
+                Text("Housing: \(housing)")
                 TextField("Housing",text: $housing)
                     .disableAutocorrection(true)
                     .padding()
                     .textFieldStyle(RoundedBorderTextFieldStyle())
+                Text("Major: \(major)")
                 TextField("Major", text: $major)
                     .disableAutocorrection(true)
                     .padding()
                     .textFieldStyle(RoundedBorderTextFieldStyle())
+                Text("Bio: \(bio)")
                 TextField("Bio",text: $bio)
                     .disableAutocorrection(true)
                     .padding()
