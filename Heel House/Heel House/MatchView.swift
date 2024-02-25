@@ -15,6 +15,11 @@ struct MatchView: View {
     var body: some View {
         //user can view matches they swiped right on here
         // create list from matches where card.x > 500
+        List {
+            Text(Card.data[1].name)
+            Text(Card.data[2].name)
+            Text(Card.data[3].name)
+        }
         VStack{
             HStack {
                 Button(action: {}) {
