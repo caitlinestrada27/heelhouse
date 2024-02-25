@@ -30,7 +30,19 @@ struct ProfileView: View {
                 .padding()
                 .background(Color.white)
                 .edgesIgnoringSafeArea(.all)
+            
+            VStack(alignment: .leading) {
+                Text("Name: ").bold()
+                Text("Age: ").bold()
+                Text("Housing: ").bold()
+                Text("Housing: ").bold()
+                Text("Majors: ").bold()
+                Text("Sleep Schedule (Scale from 1-5): ").bold()
+                Text("Bio: ").bold()
+            }
+            
             Spacer()
+            
             HStack(spacing: 50){
                 Button(action: {
                     presentMatchView = true
