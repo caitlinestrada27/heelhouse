@@ -96,6 +96,9 @@ struct CardView: View {
                             Text(card.name).font(.largeTitle).fontWeight(.bold)
                             Text(String(card.age)).font(.title)
                         }
+                        Text(card.bio)
+                            .font(.body)
+                            .foregroundColor(.white)
                     }
                 }
                 .padding()
