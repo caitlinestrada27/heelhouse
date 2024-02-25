@@ -1,5 +1,6 @@
 # Heel House
 PearlHacks Roommate Matching App
+Made by @caitlinestrada27, @sgopal08, @sadiesawyer, @cgbryan1
 
 #### Inspiration
 Our inspiration stemmed from roommate finding difficulties. We referenced existing roommate matching apps such as RoomSync to create an app that can be used by all UNC Chapel Hill students, regardless of their housing plans.
