@@ -31,14 +31,37 @@ struct ProfileView: View {
                 .background(Color.white)
                 .edgesIgnoringSafeArea(.all)
             
+            // User Info
             VStack(alignment: .leading) {
-                Text("Name: ").bold()
-                Text("Age: ").bold()
-                Text("Housing: ").bold()
-                Text("Housing: ").bold()
-                Text("Majors: ").bold()
-                Text("Sleep Schedule (Scale from 1-5): ").bold()
-                Text("Bio: ").bold()
+                HStack {
+                    Text("Name:").bold()
+                    Text("\(Card.data[0].name)")
+                }
+                .padding()
+                HStack{
+                    Text("Age:").bold()
+                    Text("\(Card.data[0].age)")
+                }
+                .padding()
+                HStack{
+                    Text("Housing:").bold()
+                    Text("\(Card.data[0].housing)")
+                }
+                .padding()
+                HStack{
+                    Text("Major:").bold()
+                    Text("\(Card.data[0].major)")
+                }
+                .padding()
+                HStack{
+                    Text("Sleep Schedule (Scale from 1-5): ").bold()
+                }
+                .padding()
+                HStack{
+                    Text("Bio:").bold()
+                    Text("\(Card.data[0].bio)")
+                }
+                .padding()
             }
             
             Spacer()
