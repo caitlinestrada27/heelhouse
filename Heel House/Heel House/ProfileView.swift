@@ -30,7 +30,7 @@ struct ProfileView: View {
                 .padding()
                 .background(Color.white)
                 .edgesIgnoringSafeArea(.all)
-            
+            Spacer()
             HStack(spacing: 50){
                 Button(action: {
                     presentMatchView = true
