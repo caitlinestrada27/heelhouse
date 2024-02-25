@@ -5,6 +5,9 @@
 //  Created by Caitlin Estrada, Sadie Sawyer, Caroline Bryan, and Sanjana Gopalswamy on 2/24/24.
 //
 
+// Source Code: YouTube Video "Tinder Clone SwiftUI 2.0" by Franck Ndame
+// https://www.youtube.com/watch?v=mUMR5TCqpDU
+
 import SwiftUI
 import UIKit
 

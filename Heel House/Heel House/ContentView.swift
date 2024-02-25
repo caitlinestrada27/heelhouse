@@ -77,6 +77,8 @@ struct ContentView: View {
     }
 }
 
+// Source Code: YouTube Video "Tinder Clone SwiftUI 2.0" by Franck Ndame
+// https://www.youtube.com/watch?v=mUMR5TCqpDU 
 struct CardView: View {
     
     @State var card: Card
