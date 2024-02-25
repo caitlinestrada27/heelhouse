@@ -102,9 +102,6 @@ struct ProfileView: View {
                         .padding()
                 }
             }
-            
-            //SHOWCASE MATCHES HERE
-            
         }
         .edgesIgnoringSafeArea(.bottom)
         .fullScreenCover(isPresented: $presentMatchView) {
