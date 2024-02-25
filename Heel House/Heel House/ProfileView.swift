@@ -13,6 +13,15 @@ struct ProfileView: View {
     @State private var presentProfileView = false
     @State private var presentContentView = false
     
+    // User attributes
+    @State private var firstName: String = ""
+    @State private var lastName: String = ""
+    @State private var age: String = ""
+    @State private var housing: String = ""
+    @State private var major: String = ""
+    @State private var sleepSchedule: Int = 0
+    @State private var bio: String = ""
+    
     var body: some View {
         //user can view matches they swiped right on here
         // create list from matches where card.x > 500
@@ -33,35 +42,30 @@ struct ProfileView: View {
             
             // User Info
             VStack(alignment: .leading) {
-                HStack {
-                    Text("Name:").bold()
-                    Text("\(Card.data[0].name)")
-                }
-                .padding()
-                HStack{
-                    Text("Age:").bold()
-                    Text("\(Card.data[0].age)")
-                }
-                .padding()
-                HStack{
-                    Text("Housing:").bold()
-                    Text("\(Card.data[0].housing)")
-                }
-                .padding()
-                HStack{
-                    Text("Major:").bold()
-                    Text("\(Card.data[0].major)")
-                }
-                .padding()
-                HStack{
-                    Text("Sleep Schedule (Scale from 1-5): ").bold()
-                }
-                .padding()
-                HStack{
-                    Text("Bio:").bold()
-                    Text("\(Card.data[0].bio)")
-                }
-                .padding()
+                TextField("First Name", text: $firstName)
+                    .disableAutocorrection(true)
+                    .padding()
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                TextField("Last Name", text: $lastName)
+                    .disableAutocorrection(true)
+                    .padding()
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                TextField("Age",text: $age)
+                    .disableAutocorrection(true)
+                    .padding()
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                TextField("Housing",text: $housing)
+                    .disableAutocorrection(true)
+                    .padding()
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                TextField("Major", text: $major)
+                    .disableAutocorrection(true)
+                    .padding()
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                TextField("Bio",text: $bio)
+                    .disableAutocorrection(true)
+                    .padding()
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
             }
             
             Spacer()
