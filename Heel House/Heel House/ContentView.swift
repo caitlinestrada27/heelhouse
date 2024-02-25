@@ -100,6 +100,8 @@ struct CardView: View {
                         Text(card.major)
                         Text("\(card.compatibility)%")
                         Text(card.bio)
+                            .font(.body)
+                            .foregroundColor(.white)
                     }
                 }
                 .padding()
