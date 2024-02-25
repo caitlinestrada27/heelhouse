@@ -96,10 +96,6 @@ struct CardView: View {
                             Text(card.name).font(.largeTitle).fontWeight(.bold)
                             Text(String(card.age)).font(.title)
                         }
-                        Text(card.housing)
-                        Text(card.major)
-                        Text("\(card.compatibility)%")
-                        Text(card.bio)
                     }
                 }
                 .padding()
