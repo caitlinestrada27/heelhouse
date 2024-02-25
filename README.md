@@ -23,6 +23,9 @@ Through this project, we gained experience in Swift and SwiftUI, languages previ
 #### What's next for Heel House
 In the future, our vision for Heel House involves integrating the Auth0 UNC login page, ensuring that our platform caters specifically to Chapel Hill students, fostering a more localized and personalized experience. Additionally, we aim to enhance user satisfaction by introducing additional customizations to our profile pages and refining our algorithm to match users with the most compatible roommates seamlessly. Our focus remains on continually improving and tailoring Heel House to meet the evolving needs and preferences of our users within the UNC community.
 
+#### Devpost
+https://devpost.com/software/heel-house
+
 [Simulator Screen Recording - iPhone 15 Pro - 2024-02-25 at 10.37.32.mp4.zip](https://github.com/caitlinestrada27/heelhouse/files/14396827/Simulator.Screen.Recording.-.iPhone.15.Pro.-.2024-02-25.at.10.37.32.mp4.zip)
 
 #### ![simulator_screenshot_CCEF582C-5624-437B-923F-5D320CDADD19](https://github.com/caitlinestrada27/heelhouse/assets/142927980/547dd870-731b-4d22-8442-32ae723aaf97)
